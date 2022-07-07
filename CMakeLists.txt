@@ -8,6 +8,6 @@ include_directories(include)
 aux_source_directory(src/ SRC)
 #生成动态链接库 [供tests子模块使用]
 add_library(channet SHARED ${SRC})
+enable_testing()    
 add_subdirectory(src/tests/)
 
-enable_testing()    
