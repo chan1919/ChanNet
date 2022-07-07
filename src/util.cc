@@ -20,3 +20,9 @@ void ErrorIf(bool condition, const char* msg) {
     }
 }
 
+void EQ_ASSRET(bool condition, const char* msg) {
+    if (!condition) {
+        perror (msg);
+        exit(EXIT_FAILURE);
+    }
+}

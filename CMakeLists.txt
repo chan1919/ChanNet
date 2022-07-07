@@ -10,4 +10,4 @@ aux_source_directory(src/ SRC)
 add_library(channet SHARED ${SRC})
 add_subdirectory(src/tests/)
 
-enable_testing()
+enable_testing()    

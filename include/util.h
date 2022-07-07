@@ -8,5 +8,10 @@
  */
 
 #pragma once
+namespace ChanNet
+{
+    void ErrorIf (bool condition, const char* msg);
 
-void ErrorIf (bool condition, const char* msg);
+    void EQ_ASSERT(bool condition, const char* msg);
+    
+}
