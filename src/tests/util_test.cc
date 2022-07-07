@@ -10,7 +10,7 @@
 #include "util.h"
 
 int main () {
-    ErrorIf (true, "True [TEST] message!\n");
+    //ErrorIf (true, "True [TEST] message!\n");
     ErrorIf (false, "False [TEST] message!\n");
     return 0;
 }
