@@ -16,4 +16,5 @@ int main () {
     //case 1
     InetAddress addr_1 ("0.0.0.0", 4399);
     ChanNet::EQ_ASSERT( addr_1.getPort() == 4399 , "Port error!");
+    return 1;
 }
