@@ -12,17 +12,20 @@
 
 #include "util.h"
 
-// 打印错误信息
-void ErrorIf(bool condition, const char* msg) {
-    if (condition) {
-        perror (msg);
-        exit(EXIT_FAILURE);
-    }
-}
-
-void EQ_ASSRET(bool condition, const char* msg) {
-    if (!condition) {
-        perror (msg);
-        exit(EXIT_FAILURE);
-    }
+namespace ChanNet
+{
+	// 打印错误信息
+	void ErrorIf(bool condition, const char* msg) {
+		if (condition) {
+			perror (msg);
+			exit(EXIT_FAILURE);
+		}
+	}
+	
+	void EQ_ASSRET(bool condition, const char* msg) {
+		if (!condition) {
+			perror (msg);
+			exit(EXIT_FAILURE);
+		}
+	}
 }
