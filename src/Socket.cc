@@ -45,6 +45,7 @@ void Socket::setNonBlocking() { fcntl(this->fd_, F_SETFL, fcntl(this->fd_, F_GET
 
 bool Socket::isNonBlocking() { return (fcntl(fd_, F_GETFL) & O_NONBLOCK) != 0; }
 
+//server端
 int Socket::Accept(InetAddress* addr) {
     int clnt_sockfd = -1;
     sockaddr_in tem_addr {};
@@ -70,6 +71,34 @@ int Socket::Accept(InetAddress* addr) {
     return clnt_sockfd;
 }
 
+// client端
+void Socket::Connect(InetAddress* addr) {
+    sockaddr_in tmp_addr = addr->getAddr();
+    if (fcntl(fd_, F_GETFL) & O_NONBLOCK) {
+        // @TODO :非阻塞socket待优化 此处暴力链接 直至完成
+    while (true) {
+      int ret = connect(fd_, (sockaddr *)&tmp_addr, sizeof(tmp_addr));
+      if (ret == 0) {
+        break;
+      }
+      if (ret == -1 && (errno == EINPROGRESS)) {
+        continue;
+      }
+      if (ret == -1) {
+        ErrorIf(true, "socket connect error");
+      }
+    }
+  } else {
+    ErrorIf(connect(fd_, (sockaddr *)&tmp_addr, sizeof(tmp_addr)) == -1, "socket connect error");
+  }
+}
 
+void Socket::Connect(const char *ip, uint16_t port) {
+  InetAddress *addr = new InetAddress(ip, port);
+  Connect(addr);
+  delete addr;
+}
+
+int Socket::getFd() { return fd_; }
 
 }// namespace
