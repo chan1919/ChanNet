@@ -9,6 +9,7 @@
 
 #pragma once
 
+namespace ChanNet{
 /**
  * 这是一个基类
  * 禁止派生类的拷贝和赋值构造
@@ -21,3 +22,5 @@ protected:
     noncopyable() = default;
     ~noncopyable() = default;
 };
+
+} //namespace ChanNet

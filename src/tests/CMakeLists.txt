@@ -1,7 +1,5 @@
 project(tests)
 
-include_directories(../include)
-
 # util_test
 add_executable(util_test util_test.cc)
 target_link_libraries(util_test channet)

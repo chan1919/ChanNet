@@ -8,6 +8,7 @@
  */
 #include <cstring>
 #include "InetAddress.h"
+namespace ChanNet{
 
 InetAddress::InetAddress(const char *ip, uint16_t port) {
   memset(&addr_, 0, sizeof(addr_));
@@ -22,3 +23,5 @@ sockaddr_in InetAddress::getAddr() { return addr_; }
 const char* InetAddress::getIp() { return inet_ntoa(addr_.sin_addr); }
 // ntohs 将一个16位数由网络字节顺序转换为主机字节顺序
 uint16_t InetAddress::getPort() { return ntohs(addr_.sin_port); }
+
+}

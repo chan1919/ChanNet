@@ -14,6 +14,7 @@
 /**
  * 封装IP类相关操作
  */
+namespace ChanNet{
 class InetAddress{
 public:
 
@@ -29,3 +30,5 @@ public:
 private:
     struct sockaddr_in addr_ {};
 };
+
+} //namespace ChanNet
