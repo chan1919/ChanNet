@@ -9,6 +9,7 @@
 
 #include <cstdio>
 #include <cstdlib>
+#include <string.h>
 
 #include "util.h"
 
@@ -24,5 +25,16 @@ void ChanNet::EQ_ASSERT(bool condition, const char* msg){
     if (!condition) {
         perror (msg);
         exit(EXIT_FAILURE);
+    }
+}
+
+
+void ChanNet::EQ_STR_ASSERT(const char* str_a, const char* str_b) {
+    int la = strlen(str_a);
+    int lb = strlen(str_b);
+    if (la != lb) EQ_ASSERT(false, "EQ_STR_ASSERT error!");
+
+    for (int i=0; i< strlen(str_a); i++) {
+        if (str_a[i] != str_b[i]) EQ_ASSERT(false, "EQ_STR_ASSERT error!");
     }
 }

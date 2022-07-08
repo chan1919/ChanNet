@@ -8,9 +8,10 @@
  */
 
 #pragma once
+#define EXIT_SUCCESS 0
 namespace ChanNet
 {
     void ErrorIf (bool condition, const char* msg);
     void EQ_ASSERT(bool condition, const char* msg);
-    
+    void EQ_STR_ASSERT(const char* str_a, const char* str_b);
 }

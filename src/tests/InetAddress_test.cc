@@ -18,5 +18,5 @@ int main () {
     ChanNet::EQ_ASSERT( addr_1.getPort() == 4399 , "Port error!");
     //std::cout<<addr_1.getIp();  
     //0.0.0.0
-    return 0;
+    return EXIT_SUCCESS;
 }

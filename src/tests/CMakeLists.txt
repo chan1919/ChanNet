@@ -10,7 +10,12 @@ add_executable(InetAddress_test InetAddress_test.cc)
 target_link_libraries(InetAddress_test channet)
 add_test(NAME InetAddress_test COMMAND InetAddress_test)
 
-# # socket test 存在问题
+# # socket_test 存在问题
 # add_executable(Socket_test Socket_test.cc)
 # target_link_libraries(Socket_test channet pthread)
 # add_test(NAME sock_test COMMAND Socket_test)
+
+# Buffer_test
+add_executable(Buffer_test Buffer_test.cc)
+target_link_libraries(Buffer_test channet)
+add_test(NAME Buffer_test COMMAND Buffer_test)
