@@ -1,5 +1,5 @@
 # ChanNet
-使用C++ 14 实现 Linux 网络库
+使用C++ 11 实现 Linux 网络库
 
 ## use and test
 ``` bash
