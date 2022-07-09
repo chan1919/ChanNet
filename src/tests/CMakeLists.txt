@@ -19,3 +19,8 @@ add_test(NAME InetAddress_test COMMAND InetAddress_test)
 add_executable(Buffer_test Buffer_test.cc)
 target_link_libraries(Buffer_test channet)
 add_test(NAME Buffer_test COMMAND Buffer_test)
+
+# ThreadPool_test
+add_executable(ThreadPool_test ThreadPool_test.cc)
+target_link_libraries(ThreadPool_test channet pthread)
+add_test(NAME ThreadPool_test COMMAND ThreadPool_test)
