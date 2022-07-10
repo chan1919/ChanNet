@@ -47,7 +47,7 @@ private:
     Socket* socket_;
     int listen_events_ {0};
     int ready_events_ {0};
-    bool exit_ {false};
+    bool exist_ {false};
 
     std::function< void() >read_callback_;
     std::function< void() >write_callback_;
