@@ -27,6 +27,6 @@ public:
     void quit();
 private:
     Poller *poller_ { nullptr };
-    bool quit_ { fasle };
+    bool quit_ { false };
 };
 }
